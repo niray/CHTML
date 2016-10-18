@@ -1,24 +1,300 @@
+<!DOCTYPE HTML>
 <html>
-	
 <head>
-	<style type="text/css">
-	h1 {
-	    color:red;
-		font-size:14px;
-	}
-	body{
-		background-image:url('file:///Users/huway_iosdev2/Desktop/HTMLLeaning/res/wx.png');
-		background-repeat:no-repeat;
-		background-attchment:fixed;
-		background-position:center;
-	}
-	</style>	
+<title>单排W3School</title>
+    <style type="text/css">
+
+        #NGray {
+            color: #888fff
+        }
+
+        body {
+            background-image: url('../res/wx.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-color: #acacac;
+        }
+
+        h1 {            color: green;         }
+
+        li strong {
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .selfStyle {
+            font-weight: normal;
+            font-style: italic;
+            color: blue;
+            margin-top: 10px;
+
+        }
+
+        #sidebar p {
+            font-style: italic;
+            text-align: left;
+            margin-top: 0.5em;
+        }
+
+        #sidebar h2 {
+            font-size: 1em;
+            font-weight: normal;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.5;
+            text-align: left;
+        }
+        .greenDiv{
+            color: green;
+            font-size: 12px;
+            font-weight: all;
+        }
+        [c=customName] {
+            color: red;
+            font-style: italic;
+            font-size: 25px;
+            border: 1px solid yellow;
+        }
+
+        .tiy{
+            border:none;
+            display:inline-block;
+            outline:0;
+            padding:6px 16px;
+            margin-bottom:10px;
+            vertical-align:middle;
+            overflow:hidden;
+            text-decoration:none;
+            color:#fff;
+            background-color:#F88E8B;
+            text-align:center;
+            transition:.2s ease-out;
+            cursor:pointer;
+            white-space:nowrap;
+            box-shadow:0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+        }
+ 
+    </style>
+
 </head>
 
+<!-- FRAMESET&FRAME -->
+<!-- <frameset cols="12%,25%,50%,13%">
+    <frame src="http://www.w3school.com.cn/example/html/frame_a.html">
+    <frame src="http://www.w3school.com.cn/example/html/frame_b.html">
+    <frame src="http://www.w3school.com.cn/example/html/frame_c.html">
+    <frame src="http://www.w3school.com.cn/example/html/frame_a.html">
+</frameset> -->
 <body>
-	<h1>AAA</h1>
-	<p><b>提示:</b> 你需要把background-attachment 属性设置为:"fixed" 才可以保证在Oprate 和 FireFox 中正常工作</p>
+
+<h1>Niray CATALINA</h1>
+<p>
+<video width="320" height="240" src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">你的浏览器不支持video 标签</video>
+</p>
+
+<!-- TextArea -->
+<textarea rows="3" cols="22">
+this is a text area, try to input some content.
+</textarea>
+<!-- START -->
+<p >
+<a class="tiy" target="_blank" href="http://www.w3school.com.cn/tiy/t.asp?f=html_image_test">亲自试一试</a>
+</p>
+
+
+<p><wbr>这段文本包含</wbr> <sub>下标</sub><sup>上标</sup></p>
+
+
+<select>
+    <optgroup label="China">
+        <option value="HeBei">HeBei</option>
+        <option value="XiZang">XiZang</option>
+        <option value="SuZhou">SuZhou</option>
+    </optgroup>
+    <optgroup label="HeBei">
+        <option value="LangFang">LangFang</option>
+        <option value="ChengDe">ChengDe</option>
+        <option value="ShiJiaZhuang">ShiJiaZhuang</option>
+    </optgroup>
+</select>
+
+<!-- OL -->
+<ol start="10">
+    <li>咖啡</li>
+    <li>可可</li>
+    <li>可乐</li>
+</ol>
+
+
+<!-- MENU -->
+<meta name="keywords" content="HTML,ASP,PHP,SQL">
+
+<menu>
+    <button type="button" onclick="file_new()">新建</button>
+    <button type="button" onclick="file_open()">打开</button>
+    <button type="button" onclick="file_save()">保存</button>
+</menu>
+<menu>
+    <button type="button" onclick="edit_cut()">剪切</button>
+    <button type="button" onclick="edit_copy()">复制</button>
+    <button type="button" onclick="edit_paste()">粘贴</button>
+</menu>
+
+
+
+
+<!-- MARK -->
+<p>你这么连话都说<q>不</q><mark>清楚 </mark> </p>
+<!-- FOOTER -->
+<footer>
+<p>Made by Niray.</p>
+<p>Chan Ning</p>
+<p>2016.10.18</p>
+</footer>
+<!-- FIGURE -->
+<figure>
+  <p>黄浦江上的的卢浦大桥</p>
+  <img src="http://www.w3school.com.cn/i/shanghai_lupu_bridge.jpg" width="350" height="234" />
+  <p>拍摄者：W3School 项目组，拍摄时间：2010 年 10 月</p>
+</figure>
+
+
+<!-- DIV -->
+<div class="greenDiv">
+    <p>This is a test infomation , 192.168.1.103</p>
+    <a href="_blank">BLANK</a>
+    <p> <em>do you know what's em?</em></p>
+    <p> <strong>do you know what's em?</strong></p>
+</div>
+<!-- FORM -->
+<form>
+    <fieldset>
+        <legend>王子的新衣❤️</legend>
+        演唱:<input type="text">
+        <br/>
+        作曲:<input type="text">
+    </fieldset>
+</form>
+<!-- DIALOG -->
+<dialog open>I'm a dialog ,do you see me ?  </dialog>
+<!-- TABLE -->
+<table border="3">
+    <caption>I'm Caption</caption>
+    <tr>
+    <td>Year</td>
+    <td>Moon</td>
+    <td>Day</td>
+    </tr>
+    <tr>
+    <td>1111</td>
+    <td>2222</td>
+    <td>3333</td>
+    </tr>
+</table>
+<!-- CANVAS -->
+<canvas id="myCanvas">你浏览器不支持 canvas!!!</canvas>
+ 
+<p>
+    <small>I'm small,very small, can you see me ?</small>
+</p>
+<p><tt>我是打印机等宽效果的字体</tt></p>
+<p><big>Yes,I'm BIG!</big></p>
+<p><i>I'm Italy, no no no,Actully ,I'm Italic.</i></p>
+<p><b>Easily, I'm bold text.</b></p>
+
+
+<p><b>提示:</b>你需要把 background-attachment 属性设置为:"fixed" 才可以保证在 Oprate 和 FireFox 中正常工作</p>
+
+<strong>
+    <li>粗体</li>
+</strong>
+<li><strong>斜体</strong></li>
+<li>斜体</li>
+
+<strong>粗体</strong>
+
+<p id="NGray" class="selfStyle" onclick="alert('Hello Html')">自定义颜色</p>
+
+<div id="sidebar"><h2><ins>身份证</ins></h2></div>
+<hr/>
+<a c="customName" href="http://www.baidu.com">[自定义]</a>
+
+<div>
+    <button>Click Me !</button>
+    <p><big>I'm BIG!</big></p>
+    <del>I was deleted</del>
+    <blockquote>blockQuote</blockquote>
+    <br/>
+    <hr/>
+    <dd>next is address & center ,I'm dd</dd>
+    <address>I'm address</address>
+
+    <center>I'm center</center>
+    <code>public static void main(String[] args){println("I'm Code.")}</code>
+    <p>
+        <dialog>This is a col</dialog>
+    </p>
+    <command>This is command</command>
+
+    <details>
+        <summary>Click me to show detail</summary>
+        <p>I'm detail</p>
+    </details>
+    <img src="http://www.w3school.com.cn/i/eg_planets.jpg">
+    <area shape="circle"
+          coords="0,0,132"
+          href="http://huway.com"
+          alt="huway">
+
+
+</div>
+<p>
+    <input list="alerbo"/>
+    <datalist id="alerbo">
+        <option value="AAA"></option>
+        <option value="BBB"></option>
+        <option value="CCC"></option>
+        <option value="DDD"></option>
+    </datalist>
+</p>
+<p>
+    <audio src="http://www.w3school.com.cn/i/horse.ogg" controls="controls">
+        Your browser does not support the audio element.
+    </audio>
+</p>
 
 </body>
 
+<script type="text/javascript">
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#666666';
+    ctx.fillRect(0, 0, 135, 246);
+</script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
