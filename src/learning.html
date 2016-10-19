@@ -28,7 +28,6 @@
             font-style: italic;
             color: blue;
             margin-top: 10px;
-
         }
 
         #sidebar p {
@@ -75,6 +74,75 @@
             box-shadow:0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
         }
  
+        p.flower{
+            background-image: url("http://www.w3school.com.cn/i/eg_bg_04.gif");
+            padding: 1em;
+            background-repeat: repeat-y;
+        }
+        p.flowerall{
+            background-image: url("http://www.w3school.com.cn/i/eg_bg_04.gif");
+            padding: 1em; 
+            background-position:66% 33%;
+            background-attachment: fixed;
+        }
+        div#outer{
+                width: 500px;
+                padding: 1em;
+                background-color:green;
+                }
+        div#inner{
+            text-indent: 10%;
+            background-color:gray;
+        }
+        p.spread{
+            /*对于空格和换行统一压缩*/
+            white-space: normal;
+            /*全部转为大写*/
+            text-transform: uppercase;
+            /*字母间的间距*/
+            letter-spacing: 1em;
+            /*单词间距*/
+            word-spacing: 1em;
+            /*字体样式 斜体*/
+            font-style: italic;
+            /*字体制定*/
+            font-family: Georgia,serif;
+            /*字体加粗*/
+            font-weight: bold;
+        }
+        p.tight{
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            word-spacing: -1em;
+            /*字体变形*/
+            font-variant: small-caps;
+        }
+        a:link   {color:blue;}    /*- 普通的、未被访问的链接*/
+        a:visited  {text-decoration: none;} /*- 用户已访问的链接*/
+        a:hover   {
+            color: red;
+            font-size: 2em;
+            border-width:5px;
+            border-color: gray;
+            border-style: solid;    
+            }  /* - 鼠标指针位于链接的上方*/
+         a:active  {text-decoration: underline;}  /*    - 链接被点击的时刻*/
+
+         #outerBlock{
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+         }
+         #innerBlock{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            margin: 10px,1em;
+         }
+         *{
+            font-family: Georgia;
+        }
+
     </style>
 
 </head>
@@ -89,8 +157,27 @@
 <body>
 
 <h1>Niray CATALINA</h1>
-<p>
-<video width="320" height="240" src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">你的浏览器不支持video 标签</video>
+
+<div  id="outerBlock">
+    <div id="innerBlock">
+       
+    </div>
+</div>
+
+<p class="spread">    This is      spread text ,        because the word-spacing is set to 1em</p>
+<p class="tight">This is tight text ,
+because the word-spacing is set to 1em</p>
+
+<div id="outer">
+    <div id="inner">
+        outer & inner css Style
+    </div>
+</div>
+
+
+<p class="flowerall">SummerTime sadness</p>
+<p class="flower">
+<video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">你的浏览器不支持video 标签</video>
 </p>
 
 <!-- TextArea -->
@@ -140,8 +227,6 @@ this is a text area, try to input some content.
     <button type="button" onclick="edit_copy()">复制</button>
     <button type="button" onclick="edit_paste()">粘贴</button>
 </menu>
-
-
 
 
 <!-- MARK -->
