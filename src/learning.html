@@ -1,6 +1,7 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
+<script type="text/javascript"></script>
 <title>单排W3School</title>
     <style type="text/css">
 
@@ -14,9 +15,11 @@
             background-attachment: fixed;
             background-position: center;
             background-color: #acacac;
+            margin: 0px;
+            padding: 0px;
         }
 
-        h1 {            color: green;         }
+        h1 {  color: yellow; }
 
         li strong {
             font-style: italic;
@@ -139,12 +142,46 @@
             background-color: blue;
             margin: 10px,1em;
          }
-         *{
+       *{
             font-family: Georgia;
+        }
+        .floatimg{
+            float: right;
+            /*clear: both;*/
+        }
+        .clear{
+            clear: both;
+        }
+        h1>strong{color: red;font-weight: normal;}
+
+        p>i:first-child{
+            color: green;
+        }
+        p:first-child i {
+            font-weight: bold;    
+            color: red;        
+        }
+        p.cssPseudo:first-letter{
+            color: blue;
+            font-size: xx-large;
+        }
+        p.bf:before{
+            content:url("http://www.w3school.com.cn/i/w3school_logo_white.gif");
+
+        }
+        p.af:after{
+            content:url("http://www.w3school.com.cn/i/w3school_logo_black.gif");
+            /*content:url("http://www.w3school.com.cn/i/horse.ogg");*/
+        }
+        img.lazy{
+            max-width: 620px;
+            margin: 0px;
+            padding: 0px;
+            display: block;
+            width: 100%;
         }
 
     </style>
-
 </head>
 
 <!-- FRAMESET&FRAME -->
@@ -154,15 +191,207 @@
     <frame src="http://www.w3school.com.cn/example/html/frame_c.html">
     <frame src="http://www.w3school.com.cn/example/html/frame_a.html">
 </frameset> -->
-<body>
+<body >
 
-<h1>Niray CATALINA</h1>
+<h1>Niray <strong>CATALINA</strong></h1>
+    
+ <!-- SCRIPT --> 
+ <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+ <script>
+ $(document).ready(function(){
+  $("#anim_div").click{function(){
+    alert("xxxxx")
+     // $("anim_div").animate({
+     //       left:'250px',
+     //        opacity:'0.5',
+     //         height:'150px',
+     //         width:'50px'
+     //    });
+     //  };
+    }
+});
 
+var c=0;
+function getWH(obj){
+   
+var w=window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h=window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+var maxW = window.screen.availWidth
+var maxH = window.screen.availHeight;
+
+obj.innerHTML="浏览器的内部窗口宽度：" + w + "，高度：" + h 
++"<br/>maxW:"+maxW+"  maxH: "+maxH;
+}
+
+function addLoadEvent(func){
+    var oldonload = window.onload;
+     if (typeof window.onload != 'function'){
+         window.onload = func;
+      }
+      else {
+         window.onload = function(){
+         oldonload();
+         func();
+       }
+      }
+}
+
+function changeLight(){
+    element = document.getElementById("light")
+    if(element.src.match("bulbon")){
+        element.src = "http://www.w3school.com.cn/i/eg_bulboff.gif"
+    }else{
+        element.src = "http://www.w3school.com.cn/i/eg_bulbon.gif"
+    }
+ }
+ function changeStyle(){
+    for(var i = 0 ; i < 10; i++){
+        // alert("My First JavaScript"); 
+    }
+    var ele = document.getElementById("spanID");
+    ele.style = "color:red";
+    alert("My First JavaScript"); 
+ }
+
+function clearAll(){
+    alert("xxx");
+    document.write("none");
+}
+
+function alertRole(name,job){
+    alert("weilcome"+name+" jon "+job);
+    clearAll();
+}
+
+function onMultiClick(){
+ var txt = document.getElementById("multiClick");
+  txt.style = "color:red";
+  var txtArr = ["点点点","再点我","不要停","继续","➕点点点","永不止境","再见!👋"];
+  var size = txtArr.length;
+  for(var i = 0 ; i < size;i++){
+    var str = txt.innerHTML;
+    console.log(str)
+    if(str==txtArr[i]){
+        if(i+1<size){
+         txt.innerHTML=txtArr[i+1]
+        }else{
+         txt.style.display="none";
+        }
+        break;
+    }
+  }
+}
+
+function onFocusC(obj){
+    var inputT = document.getElementById('testFocus')
+    inputT.value = inputT.value.toUpperCase()
+}
+/**
+*时间钟表
+*/
+function startTime(){
+    var date = new Date();
+    var H = fmtTime(date.getHours());
+    var M = fmtTime(date.getMinutes());
+    var S = fmtTime(date.getSeconds());
+
+    var time = document.getElementById("time");
+    time.innerHTML = (H)+":"+(M)+":"+(S);
+    setTimeout('startTime()',500);
+}
+function fmtTime(obj){
+    if(obj<10) obj="0"+obj;
+    return obj;
+}
+ var tt
+function updateTimeEvt(){
+     document.getElementById("pTime").value = c;
+    c=c+1;
+    tt=setTimeout("updateTimeEvt()",1)
+    if(c>100)clearTimeout(tt)
+}
+addLoadEvent(changeStyle());
+
+</script>
+<!-- SCRIPT -->  
+
+<input onclick="updateTimeEvt()" id="pTime">XXXX</p>
+<button onclick="window.location.assign('http://baidu.com')">redirect baidu</button>
+<button style="margin: 1em;padding: 1em;"onclick="getWH(this)"></button> 
+<p>
+<input id="testFocus" type="text" onmousedown="this.style='background-color:black'"
+ onmouseup="this.style='background-color:yellow'" onchange="onFocusC(this)"></h4>
+</p>
+<p id="time"/>
+<h3 id ="multiClick" onclick="onMultiClick()" style="background-color:green;
+width:170px;
+height:80px;
+margin:20px;
+padding-top:20px;
+color:#ffffff;
+font-weight:bold; 
+font-size:18px;
+float:left;
+text-align:center;
+font-family:'微软雅黑';">点点点</h3>
+<h3 style="background-color:green;
+width:170px;
+height:80px;
+margin:20px;
+padding-top:20px;
+color:#ffffff;
+font-weight:bold; 
+font-size:18px;
+float:left;
+text-align:center;
+font-family:'微软雅黑';" onmouseover="this.innerHTML='mouseOver'" onmouseout="this.innerHTML='mouse out'">点点点</h3>
+
+<section class="m-component-download clearfix" id="downloadApp" style="width: 100%; position: fixed; bottom: 0px; z-index: 100;">
+        <div class="m-close">
+        <span class="glyphicon glyphicon-remove"></span>
+        </div>
+        <span class="pull-left"><img class="m-img" ></span>
+        <span id="spanID" onclick="changeStyle()">下载果园App，立享专属优惠<br>天天到家，2小时闪电送达</span>
+        <span class="pull-right m-btn"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.ttxg.fruitday" class="btn btn-success " role="button" name="apk_url">立刻体验</a></span>
+    </section>
+ <div>
+ <div id="anim_div" style="width: 5em;height: 5em; background-color: green;"></div>
+<button onclick="alertRole('王小二','CWO')" >清除</button>
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9edc56a8f5.jpg">
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9edd71bace.jpg">
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9ede6d97b7.jpg"> 
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9eebdd9dee.jpg"> 
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9eecc1c2b1.jpg"> 
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9eed50af1a.jpg"> 
+<img class="lazy" src="http://activecdn.fruitday.com/active_57f9eee509bad.jpg"> 
+<img class="lazy" src="http://activecdn.fruitday.com/active_57fda2d13872f.jpg"> 
+</div>
+<img id="light" src="http://www.w3school.com.cn/i/eg_bulboff.gif" onclick="changeLiaght()">
+<div>
+<img class="floatimg" src="http://www.w3school.com.cn/i/eg_cute.gif" >
+<img class="floatimg" src="http://www.w3school.com.cn/i/eg_cute.gif" >
+ <p class="cssPseudo">
+This is some text. <i>This</i> is <i>some </i>text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some</i> text. This is some text.
+This is some text. This is some text. This is some text.
+<p class="bf af">
+This is some text. This is some text. This is some text.
+</p>
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p> </div>
 <div  id="outerBlock">
     <div id="innerBlock">
-       
     </div>
 </div>
+<dir class="clear"></dir>
 
 <p class="spread">    This is      spread text ,        because the word-spacing is set to 1em</p>
 <p class="tight">This is tight text ,
@@ -174,10 +403,9 @@ because the word-spacing is set to 1em</p>
     </div>
 </div>
 
-
 <p class="flowerall">SummerTime sadness</p>
 <p class="flower">
-<video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">你的浏览器不支持video 标签</video>
+<video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">你的浏览器不支持video标签</video>
 </p>
 
 <!-- TextArea -->
@@ -189,9 +417,7 @@ this is a text area, try to input some content.
 <a class="tiy" target="_blank" href="http://www.w3school.com.cn/tiy/t.asp?f=html_image_test">亲自试一试</a>
 </p>
 
-
 <p><wbr>这段文本包含</wbr> <sub>下标</sub><sup>上标</sup></p>
-
 
 <select>
     <optgroup label="China">
@@ -340,11 +566,11 @@ this is a text area, try to input some content.
         <option value="AAA"></option>
         <option value="BBB"></option>
         <option value="CCC"></option>
-        <option value="DDD"></option>
+        <option value="DDD"></option> 
     </datalist>
 </p>
 <p>
-    <audio src="http://www.w3school.com.cn/i/horse.ogg" controls="controls">
+   <audio src="http://www.w3school.com.cn/i/horse.ogg" controls="controls">
         Your browser does not support the audio element.
     </audio>
 </p>
@@ -357,29 +583,6 @@ this is a text area, try to input some content.
     ctx.fillStyle = '#666666';
     ctx.fillRect(0, 0, 135, 246);
 </script>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
