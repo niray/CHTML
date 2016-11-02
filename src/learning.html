@@ -196,19 +196,45 @@
 <h1>Niray <strong>CATALINA</strong></h1>
     
  <!-- SCRIPT --> 
- <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+ <script src="../res/jquery-3.1.1.min.js"></script>
  <script>
  $(document).ready(function(){
-  $("#anim_div").click{function(){
-    alert("xxxxx")
-     // $("anim_div").animate({
-     //       left:'250px',
-     //        opacity:'0.5',
-     //         height:'150px',
-     //         width:'50px'
-     //    });
-     //  };
-    }
+  $('#animDiv').click(function(){
+         $('#animDiv').animate({
+             left:'250px',
+             opacity:'0.5',
+             height:'150px',
+             width:'50px'
+        });
+      });
+
+    $("#anim_div").attr('style','margin:1em;').html('Nothing');
+    
+    $("#anim_div").click(function(){
+        $('#anim_div').hide(1000,function(){
+            alert("I'm hidden");
+        });
+    });
+
+    $('#chaining_div').click(function(){
+        $("#chaining_div")
+        .css("background-color","yellow").css("font-size","1em").css("color","yellow").
+        slideUp(2000).slideDown(578);
+    });
+ 
+         var divEle = $("#div_show")
+         var txt=divEle.attr("style")+"</br>";
+         txt+="Width of div: " +divEle.width() + "</br>";
+         txt+="Height of div: " + divEle.height() + "</br>";
+         txt+="Inner width of div: " + divEle.innerWidth() + "</br>";
+         txt+="Inner height of div: " + divEle.innerHeight()+ "</br>";
+         txt+="outer width of div: " + divEle.outerWidth() + "</br>";
+         txt+="outer height of div: " + divEle.outerHeight()+ "</br>";
+         txt+="Outer width of div (margin included): " + divEle.outerWidth(true) + "</br>";
+         txt+="Outer height of div (margin included): " +divEle.outerHeight(true)+ "</br>";
+         divEle.html(txt);            
+        
+     
 });
 
 var c=0;
@@ -321,6 +347,16 @@ addLoadEvent(changeStyle());
 </script>
 <!-- SCRIPT -->  
 
+ 
+<div id="div_show" style="height:15em;width:35em;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+
+
+ <div id="chaining_div" style="width: 5em;height: 5em; background-color: green;"></div>
+
+ <div id="animDiv" style="width: 5em;height: 5em; background-color: green;"></div>
+ <div id="anim_div" style="width: 5em;height: 5em; background-color: green;"></div>
+
 <input onclick="updateTimeEvt()" id="pTime">XXXX</p>
 <button onclick="window.location.assign('http://baidu.com')">redirect baidu</button>
 <button style="margin: 1em;padding: 1em;"onclick="getWH(this)"></button> 
@@ -361,7 +397,6 @@ font-family:'微软雅黑';" onmouseover="this.innerHTML='mouseOver'" onmouseout
         <span class="pull-right m-btn"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.ttxg.fruitday" class="btn btn-success " role="button" name="apk_url">立刻体验</a></span>
     </section>
  <div>
- <div id="anim_div" style="width: 5em;height: 5em; background-color: green;"></div>
 <button onclick="alertRole('王小二','CWO')" >清除</button>
 <img class="lazy" src="http://activecdn.fruitday.com/active_57f9edc56a8f5.jpg">
 <img class="lazy" src="http://activecdn.fruitday.com/active_57f9edd71bace.jpg">
